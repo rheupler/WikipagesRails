@@ -5,6 +5,7 @@ describe 'the edit cities page' do
     @country = Country.create(:name => "Matilda")
     @city = City.create(:name => "Coolio", :country_id => @country.id)
   end
+  
   it 'edits a city' do
     visit country_path(@country)
     click_link "Edit"
