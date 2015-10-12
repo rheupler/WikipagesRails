@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe Country do
+describe Category do
   it { should validate_presence_of :name }
-  it { should belong_to :category}
+  it { should have_many :countries }
 end
