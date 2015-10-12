@@ -1,0 +1,5 @@
+<h2>Welcome to <%= @country.name %>!</h2>
+
+<% if @country.image_url %>
+  <img src="<%= @country.image_url %>" alt="" />
+<% end %>
