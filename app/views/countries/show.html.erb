@@ -3,7 +3,7 @@
 <% if @country.image_url %>
   <img src="<%= @country.image_url %>" alt="" width='700px' />
 <% end %>
-
+<h2>Here are your cities for <%= @country.name %>:</h2>
 <% if @country.cities.any? %>
 
   <% @country.cities.each do |city| %>
