@@ -1,3 +1,5 @@
+<% content_for(:title, "Country | Wikipages") %>
+
 <h2>Welcome to <%= @country.name %>!</h2>
 
 <% if @country.image_url %>
@@ -22,5 +24,7 @@
 
 <%= link_to 'Create City', new_country_city_path(@country) %>
 
-<br>
-<%= link_to 'Back', countries_path %>
+<% content_for(:footer) do %>
+  <br>
+  <%= link_to 'Back', countries_path %>
+<% end %>

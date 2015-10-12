@@ -2,13 +2,13 @@ class CitiesController < ApplicationController
   def new
     @country = Country.find(params[:country_id])
     @city = @country.cities.new
-    render :new
   end
 
   def create
     @country = Country.find(params[:country_id])
     @city = @country.cities.new(city_params)
     if @city.save
+      flash[:notice] = "City: #{@city.name} successfully added!"
       redirect_to country_path(@city.country)
     else
       render :new
@@ -18,7 +18,6 @@ class CitiesController < ApplicationController
   def edit
     @country = Country.find(params[:country_id])
     @city = City.find(params[:id])
-    render :edit
   end
 
   def update
