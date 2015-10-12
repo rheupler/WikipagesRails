@@ -6,6 +6,14 @@
 
 <% if @country.cities.any? %>
 
+  <% @country.cities.each do |city| %>
+    <h3><%= city.name %>
+    <%= link_to 'Edit', edit_country_city_path(@country, city) %> |
+    <%= link_to 'Delete', country_city_path(@country, city),
+                                :data => {:confirm => "You sure?",
+                                          :method => 'delete'} %>
+    </h3>
+  <% end %>
 <% else %>
   <p>
     There are no cities yet!
