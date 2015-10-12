@@ -1,5 +1,18 @@
 <h2>Welcome to <%= @country.name %>!</h2>
 
 <% if @country.image_url %>
-  <img src="<%= @country.image_url %>" alt="" />
+  <img src="<%= @country.image_url %>" alt="" width='700px' />
 <% end %>
+
+<% if @country.cities.any? %>
+
+<% else %>
+  <p>
+    There are no cities yet!
+  </p>
+<% end %>
+
+<%= link_to 'Create City', new_country_city_path(@country) %>
+
+<br>
+<%= link_to 'Back', countries_path %>

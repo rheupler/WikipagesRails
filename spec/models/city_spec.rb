@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe Category do
+describe City do
   it { should validate_presence_of :name }
-  it { should have_many :countries }
+  it { should belong_to :country }
 end
